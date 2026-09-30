@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>অনুভূতির পাতা — Ashik Jin</title>
+<meta name="description" content="অনুভূতির পাতা — উপন্যাস, উক্তি ও অনুভূতির একটি সিনেমাটিক সাহিত্যিক জগৎ। Presented by Ashik Jin.">
+<meta name="theme-color" content="#08070b">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:#030306;color:#f6eef2;
+  font-family:"Noto Serif Bengali","SolaimanLipi",Georgia,serif;
+  overflow-x:hidden
+}
+button,input,textarea{font-family:inherit}
+button{cursor:pointer}
+a{text-decoration:none}
+::selection{background:#9f1742;color:#fff}
+
+/* ---------- LOADER ---------- */
+#pageLoader{position:fixed;inset:0;background:#020205;z-index:100000;display:flex;align-items:center;justify-content:center;transition:1s}
+.loaderBox{text-align:center}
+.loaderMoon{width:64px;height:64px;border-radius:50%;background:#eee;box-shadow:0 0 30px #fff8,0 0 90px #9e174455;animation:loaderMoon 1.8s infinite alternate}
+.loaderText{margin-top:20px;color:#c995a8;letter-spacing:5px;font-size:10px}
+@keyframes loaderMoon{from{transform:scale(.85);opacity:.5}to{transform:scale(1.08);opacity:1}}
+
+/* ---------- INTRO ---------- */
+#intro{
+ position:fixed;inset:0;z-index:9999;overflow:hidden;
+ background:radial-gradient(circle at 72% 23%,#8e23401f,transparent 25%),linear-gradient(180deg,#020207,#08060c 48%,#180910);
+ transition:opacity 1.4s,transform 1.4s
+}
+#intro.exit{opacity:0;transform:scale(1.08);pointer-events:none}
+.starLayer{position:absolute;inset:0}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;box-shadow:0 0 8px #fff;animation:starBlink 2.5s infinite alternate}
+.star:nth-child(1){left:5%;top:13%}.star:nth-child(2){left:11%;top:35%;animation-delay:1s}.star:nth-child(3){left:19%;top:21%;animation-delay:1.7s}.star:nth-child(4){left:27%;top:8%;animation-delay:.4s}.star:nth-child(5){left:36%;top:29%;animation-delay:2s}.star:nth-child(6){left:45%;top:14%;animation-delay:1.1s}.star:nth-child(7){left:54%;top:32%;animation-delay:.7s}.star:nth-child(8){left:63%;top:9%;animation-delay:1.9s}.star:nth-child(9){left:76%;top:15%;animation-delay:.3s}.star:nth-child(10){left:87%;top:30%;animation-delay:1.4s}.star:nth-child(11){left:94%;top:11%;animation-delay:2.2s}.star:nth-child(12){left:69%;top:44%;animation-delay:.8s}.star:nth-child(13){left:34%;top:47%;animation-delay:1.5s}.star:nth-child(14){left:16%;top:57%;animation-delay:.6s}.star:nth-child(15){left:83%;top:56%;animation-delay:1.8s}.star:nth-child(16){left:48%;top:55%;animation-delay:.9s}
+@keyframes starBlink{from{opacity:.15;transform:scale(.6)}to{opacity:1;transform:scale(1.6)}}
+.introMoon{
+ position:absolute;width:145px;height:145px;right:11%;top:10%;border-radius:50%;
+ background:radial-gradient(circle at 35% 28%,#fff 0 3%,transparent 4%),radial-gradient(circle at 66% 63%,#aaa 0 5%,transparent 6%),radial-gradient(circle at 28% 70%,#aaa 0 4%,transparent 5%),#e7e5e3;
+ box-shadow:0 0 35px #fff7,0 0 100px #aa1e461f;animation:moonFloat 6s ease-in-out infinite
+}
+@keyframes moonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.shoot{position:absolute;width:120px;height:2px;background:linear-gradient(90deg,transparent,#fff);transform:rotate(-30deg);opacity:0}
+.shoot.one{left:5%;top:25%;animation:shooting 7s 2s infinite}.shoot.two{left:62%;top:35%;animation:shooting 9s 5s infinite}
+@keyframes shooting{0%{opacity:0;transform:translate(0,0) rotate(-30deg)}5%{opacity:1}18%{opacity:0;transform:translate(280px,150px) rotate(-30deg)}100%{opacity:0}}
+.cloud{position:absolute;width:330px;height:70px;border-radius:100px;background:#ffffff0a;filter:blur(5px)}
+.cloud:before,.cloud:after{content:"";position:absolute;border-radius:50%;background:inherit}
+.cloud:before{width:120px;height:120px;left:55px;bottom:0}.cloud:after{width:95px;height:95px;right:55px;bottom:0}
+.cloud.a{left:-100px;top:28%;animation:cloudMove 25s linear infinite}.cloud.b{right:-120px;top:43%;animation:cloudMoveBack 30s linear infinite}
+@keyframes cloudMove{from{transform:translateX(-30px)}to{transform:translateX(220px)}}@keyframes cloudMoveBack{from{transform:translateX(30px)}to{transform:translateX(-220px)}}
+.tree{position:absolute;bottom:-20px;left:-40px;width:430px;height:370px}
+.treeTrunk{position:absolute;left:85px;bottom:0;width:65px;height:340px;background:#010101;border-radius:60% 40% 0 0;transform:rotate(-8deg)}
+.branch{position:absolute;height:24px;border-radius:30px;background:#010101;transform-origin:left center}
+.branch1{left:100px;bottom:250px;width:250px;transform:rotate(-25deg)}.branch2{left:105px;bottom:180px;width:220px;transform:rotate(12deg)}.branch3{left:90px;bottom:290px;width:190px;transform:rotate(-45deg)}.branch4{left:110px;bottom:130px;width:180px;transform:rotate(25deg)}
+.introContent{position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px}
+.overline{color:#c8899e;letter-spacing:5px;font-size:10px;margin-bottom:20px;animation:fadeUp 1.5s ease both}
+.siteLogo{font-size:clamp(42px,10vw,90px);font-weight:900;color:#fff;text-shadow:0 0 15px #fff4,0 0 50px #96143c8c;animation:logoIn 2s ease both}
+.logoLine{width:150px;height:1px;margin:20px 0;background:linear-gradient(90deg,transparent,#c16b87,transparent)}
+.tagline{color:#c9b8bf;font-size:16px;margin-bottom:34px}
+.enterButton{position:relative;border:0;color:#fff;padding:17px 31px;border-radius:5px;font-size:15px;font-weight:bold;background:linear-gradient(135deg,#470716,#a9163f,#5b071d);box-shadow:0 0 18px #b414412e,inset 0 0 18px #fff1;overflow:hidden;transition:.4s}
+.enterButton:before{content:"";position:absolute;top:0;left:-120%;width:65%;height:100%;background:linear-gradient(90deg,transparent,#fff6,transparent);transform:skewX(-25deg);transition:.8s}
+.enterButton:hover:before{left:150%}.enterButton:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 0 35px #be194d99}
+.presentedIntro{margin-top:27px;color:#95858c;font-family:Georgia,serif;font-size:12px;letter-spacing:2px}
+.presentedIntro strong{display:block;margin-top:6px;color:#e0a0b7;font-size:17px;letter-spacing:3px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes logoIn{from{opacity:0;transform:scale(.86) translateY(20px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+
+/* ---------- SITE ---------- */
+#website{opacity:0;visibility:hidden;transition:opacity 1s}
+#website.visible{opacity:1;visibility:visible}
+.navbar{position:fixed;left:0;top:0;width:100%;z-index:1000;background:#030306cc;backdrop-filter:blur(18px);border-bottom:1px solid #fff1}
+.navInner{max-width:1250px;margin:auto;min-height:68px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{color:#e4a0b7;font-size:20px;font-weight:bold;white-space:nowrap}
+.navMenu{display:flex;gap:13px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.navMenu button{background:none;border:0;color:#aaa;font-size:12px;transition:.3s;padding:7px 4px}.navMenu button:hover{color:#e6a1b9;transform:translateY(-2px)}
+.authorBtn{border:1px solid #9b315855!important;border-radius:20px!important;padding:8px 12px!important;color:#d99aae!important;background:#9b17420d!important}
+#brandSecret{cursor:pointer;user-select:none}
+#secretHint{position:fixed;right:14px;bottom:14px;z-index:9999;background:#120a0d;color:#d99aae;border:1px solid #9b315855;padding:10px 14px;border-radius:12px;display:none;font-size:12px;box-shadow:0 8px 30px #0008}
+
+/* ---------- PAGES ---------- */
+.page{display:none;min-height:100vh;padding-top:68px;animation:pageIn .8s ease}.page.active{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+
+/* ---------- HOME ---------- */
+.homeHero{min-height:calc(100vh - 68px);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:50px 20px;background:radial-gradient(circle at 50% 30%,#82143733,transparent 38%),linear-gradient(180deg,#050507,#10070d)}
+.homeHero:before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid #c8648e12;animation:spin 30s linear infinite}
+.homeHero:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;border:1px solid #ffffff08;animation:spin 18s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.homeContent{max-width:850px;position:relative;z-index:2}
+.smallTitle{color:#bb728b;font-size:10px;letter-spacing:5px}.homeContent h1{margin-top:15px;font-size:clamp(45px,10vw,90px);line-height:1;text-shadow:0 0 40px #aa1e704d}.homeContent p{color:#999;line-height:2;margin:25px auto 35px;font-size:16px}
+.homeButtons{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}.bigButton{padding:15px 25px;border-radius:5px;border:0;font-size:14px;font-weight:bold;transition:.35s}.redButton{color:#fff;background:linear-gradient(135deg,#5b071c,#a81942);box-shadow:0 0 25px #aa143c40}.darkButton{color:#ddd;background:#fff008;border:1px solid #fff2}.bigButton:hover{transform:translateY(-4px)}
+
+/* ---------- COMMON ---------- */
+.section{padding:90px 20px}.container{max-width:1150px;margin:auto}.heading{text-align:center;margin-bottom:45px}.heading small{color:#bd7189;letter-spacing:4px;font-size:10px}.heading h2{margin-top:12px;font-size:40px}.heading p{color:#777;margin-top:10px}
+
+/* ---------- NOVELS ---------- */
+.novelPage{background:radial-gradient(circle at 10% 10%,#78143c22,transparent 30%),#060608}
+.search{max-width:600px;margin:0 auto 40px}.search input{width:100%;padding:16px 20px;border-radius:5px;border:1px solid #fff2;outline:0;background:#ffffff0a;color:#eee;font-size:15px}.search input:focus{border-color:#9b3155;box-shadow:0 0 20px #961e461f}
+.novelGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.novelCard{background:linear-gradient(145deg,#fff012,#fff003);border:1px solid #fff1;border-radius:8px;padding:16px;transition:.45s;overflow:hidden}.novelCard:hover{transform:translateY(-9px);border-color:#be3c6466;box-shadow:0 20px 60px #0007}
+.cover{height:360px;position:relative;overflow:hidden;border-radius:5px;background:linear-gradient(145deg,#260914,#0d0509)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.coverDefault{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:25px;background:radial-gradient(circle at 50% 25%,#b43c6433,transparent 30%)}
+.coverDefault .coverIcon{font-size:55px;margin-bottom:20px}.coverDefault h3{color:#e3a2b7;font-size:24px}.coverDefault span{color:#777;font-size:11px;letter-spacing:3px;margin-top:12px}
+.novelInfo{padding:20px 5px 5px}.number{color:#a85c77;font-size:10px;letter-spacing:3px}.novelInfo h3{margin:8px 0;font-size:24px}.novelInfo p{color:#888;line-height:1.8;font-size:14px}.readNovel{margin-top:15px;display:inline-block;padding:10px 15px;color:#fff;background:#8c193c59;border:1px solid #c8507833;border-radius:4px;font-size:13px;transition:.3s}.readNovel:hover{background:#aa1e46aa}
+
+/* ---------- READER ---------- */
+#reader{position:fixed;inset:0;background:#000e;backdrop-filter:blur(12px);z-index:5000;display:none;overflow-y:auto;padding:30px 15px}
+.readerBox{max-width:850px;margin:40px auto;background:#0d0b0e;border:1px solid #fff1;border-radius:8px;padding:30px;box-shadow:0 30px 100px #000b;animation:modalIn .5s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+.closeReader{float:right;border:0;background:none;color:#aaa;font-size:25px}.readerTitle{clear:both;padding-top:25px;text-align:center;color:#e1a1b6;font-size:35px}.readerCover{width:230px;height:320px;margin:30px auto;border-radius:5px;overflow:hidden}.readerCover img{width:100%;height:100%;object-fit:cover}.readerText{color:#c5bdc1;font-size:17px;line-height:2.2;white-space:pre-line}
+
+/* ---------- QUOTES ---------- */
+.quotePage{background:linear-gradient(180deg,#060608,#10070d,#060608)}.quoteGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.quoteCard{position:relative;padding:30px;border:1px solid #d296aa1f;border-radius:8px;background:#fff006;overflow:hidden;transition:.4s}.quoteCard:hover{transform:translateY(-5px);border-color:#be46664d}.quoteCard:before{content:"“";position:absolute;right:15px;top:-25px;font-size:140px;color:#be285012}.quoteText{position:relative;z-index:1;font-size:20px;line-height:2;color:#e0d9dc}.quoteAuthor{margin-top:15px;color:#a66a80;font-size:13px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.actions button{padding:9px 13px;border-radius:4px;border:1px solid #fff2;color:#bbb;background:#fff008;transition:.3s}.actions button:hover{color:#fff;border-color:#9e3458;transform:translateY(-2px)}
+.savedBox{max-width:800px;margin:45px auto 0;padding:25px;border:1px solid #fff1;background:#fff006;border-radius:7px}.savedBox h3{color:#d99aae;margin-bottom:15px}.savedItem{padding:12px 0;border-bottom:1px solid #fff1;color:#999;line-height:1.8}
+
+/* ---------- ABOUT ---------- */
+.aboutPage{background:#070709}.aboutBox{max-width:850px;margin:auto;padding:50px 30px;text-align:center;border:1px solid #fff1;border-radius:8px;background:#fff006}.aboutBox p{color:#999;font-size:16px;line-height:2.1}.pink{color:#dfa0b6}
+
+/* ---------- ADMIN ---------- */
+.adminPage{background:#070709}.adminLogin,.adminPanel{max-width:850px;margin:auto;padding:30px;background:#fff006;border:1px solid #fff1;border-radius:8px}.adminPanel{display:none}.adminLogin h3,.adminPanel h3{color:#dda0b7;margin-bottom:20px}
+.formInput{width:100%;padding:14px;margin-bottom:12px;background:#111116;border:1px solid #292932;border-radius:4px;color:#fff;outline:none}.formInput:focus{border-color:#963252}textarea.formInput{min-height:180px;resize:vertical}
+.adminButton{padding:12px 20px;border:0;border-radius:4px;background:linear-gradient(135deg,#5e0b20,#9f1940);color:#fff;transition:.3s}.adminButton:hover{transform:translateY(-2px);box-shadow:0 8px 25px #9f194044}
+.coverPreview{width:180px;height:250px;border-radius:5px;overflow:hidden;margin:10px 0 20px;background:#111;display:none}.coverPreview img{width:100%;height:100%;object-fit:cover}
+.adminHelp{margin-top:15px;color:#777;line-height:1.8;font-size:12px}.adminStatus{margin:0 0 18px;padding:12px;border-radius:5px;background:#0e1711;color:#9cd6ad;font-size:13px;display:none}
+.adminList{margin-top:30px;display:grid;gap:12px}.adminItem{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:15px;border:1px solid #fff1;border-radius:6px;background:#0d0c10}.adminItemInfo{min-width:0}.adminItemInfo strong{color:#ddd}.adminItemInfo small{display:block;color:#777;margin-top:5px}.danger{background:#4a101c!important}.secondary{background:#28232a!important}
+
+/* ---------- FOOTER ---------- */
+footer{padding:65px 20px;text-align:center;background:#030304;border-top:1px solid #fff1}.footerLogo{color:#e3a0b8;font-size:26px;margin-bottom:12px}.footerTag{color:#666;font-size:13px}.footerPresented{margin-top:25px;color:#777;font-size:12px;letter-spacing:2px}.footerPresented strong{display:block;margin-top:7px;color:#c9829b;font-size:16px}
+
+/* ---------- TOAST ---------- */
+#toast{position:fixed;left:50%;bottom:25px;z-index:99999;padding:13px 20px;border-radius:5px;background:#171016;border:1px solid #c850784d;color:#fff;opacity:0;transform:translate(-50%,80px);transition:.4s;max-width:90%;text-align:center}#toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- FLOATING PARTICLES ---------- */
+.particle{position:fixed;bottom:-10px;width:3px;height:3px;border-radius:50%;background:#d889a4;opacity:.2;pointer-events:none;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-110vh) translateX(60px);opacity:0}}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:850px){
+ .navInner{min-height:60px}.brand{font-size:16px}.navMenu{gap:7px}.navMenu button{font-size:10px}
+ .introMoon{width:95px;height:95px;right:7%;top:10%}.tree{transform:scale(.7);transform-origin:bottom left}.siteLogo{font-size:clamp(40px,11vw,65px)}.tagline{font-size:14px}
+ .novelGrid{grid-template-columns:1fr}.quoteGrid{grid-template-columns:1fr}.cover{height:390px}.section{padding:70px 15px}.heading h2{font-size:31px}.readerBox{padding:20px}.readerTitle{font-size:28px}.readerText{font-size:16px}.adminItem{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:500px){
+ .navMenu button:nth-child(4){display:none}.navMenu{gap:5px}.authorBtn{padding:7px 9px!important}
+ .enterButton{width:min(92vw,340px);font-size:14px}.homeButtons{flex-direction:column;align-items:center}.bigButton{width:min(90vw,330px)}
+}
+</style>
+</head>
+
+<body>
+
+<div id="pageLoader"><div class="loaderBox"><div class="loaderMoon"></div><div class="loaderText">অনুভূতির পাতা</div></div></div>
+
+<div id="intro">
+  <div class="starLayer">
+    <i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i>
+    <i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i>
+    <i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i>
+    <i class="star"></i><i class="star"></i><i class="star"></i><i class="star"></i>
+  </div>
+  <div class="introMoon"></div>
+  <div class="shoot one"></div><div class="shoot two"></div>
+  <div class="cloud a"></div><div class="cloud b"></div>
+  <div class="tree"><div class="treeTrunk"></div><div class="branch branch1"></div><div class="branch branch2"></div><div class="branch branch3"></div><div class="branch branch4"></div></div>
+  <div class="introContent">
+    <div class="overline">A WORLD WRITTEN WITH FEELINGS</div>
+    <div class="siteLogo">✦ অনুভূতির পাতা ✦</div>
+    <div class="logoLine"></div>
+    <div class="tagline">গল্প যেখানে অনুভূতি হয়ে বাঁচে</div>
+    <button class="enterButton" onclick="enterSite()">📖 উপন্যাসের জগতে প্রবেশ করুন</button>
+    <div class="presentedIntro">Presented by...<strong>Ashik Jin</strong></div>
+  </div>
+</div>
+
+<div id="website">
+
+<nav class="navbar">
+  <div class="navInner">
+    <div class="brand" id="brandSecret" title="">✦ অনুভূতির পাতা</div>
+    <div class="navMenu">
+      <button onclick="showPage('home')">হোম</button>
+      <button onclick="showPage('novels')">উপন্যাস</button>
+      <button onclick="showPage('quotes')">উক্তি</button>
+      <button onclick="showPage('about')">পরিচিতি</button>
+    </div>
+  </div>
+</nav>
+
+<main id="home" class="page active">
+  <section class="homeHero">
+    <div class="homeContent">
+      <div class="smallTitle">✦ WELCOME TO THE WORLD OF STORIES ✦</div>
+      <h1>অনুভূতির পাতা</h1>
+      <p>কিছু গল্প শুধু পড়া যায় না—<br>তারা ধীরে ধীরে আমাদের অনুভূতির অংশ হয়ে যায়।</p>
+      <div class="homeButtons">
+        <button class="bigButton redButton" onclick="showPage('novels')">📖 উপন্যাস পড়ুন</button>
+        <button class="bigButton darkButton" onclick="showPage('quotes')">✦ উক্তি পড়ুন</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section id="novels" class="page novelPage">
+  <div class="section">
+    <div class="container">
+      <div class="heading">
+        <small>✦ THE NOVEL LIBRARY ✦</small>
+        <h2>উপন্যাসের জগৎ</h2>
+        <p>প্রচ্ছদ, গল্প ও অধ্যায়—সব এক জায়গায়।</p>
+      </div>
+      <div class="search"><input id="novelSearch" type="text" placeholder="🔎 উপন্যাস খুঁজুন..." oninput="searchNovels()"></div>
+      <div class="novelGrid" id="novelGrid"></div>
+    </div>
+  </div>
+</section>
+
+<section id="quotes" class="page quotePage">
+  <div class="section">
+    <div class="container">
+      <div class="heading">
+        <small>✦ WORDS THAT STAY ✦</small>
+        <h2>উক্তির পাতা</h2>
+        <p>ভালো লাগা কথাগুলো Copy, Save এবং Share করতে পারবে।</p>
+      </div>
+      <div class="quoteGrid" id="quoteGrid"></div>
+      <div class="savedBox">
+        <h3>💾 আমার Saved উক্তি</h3>
+        <div id="savedQuotes">এখনো কোনো উক্তি Save করা হয়নি।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="page aboutPage">
+  <div class="section">
+    <div class="container">
+      <div class="heading"><small>✦ ABOUT THE PAGE ✦</small><h2>অনুভূতির পাতা</h2></div>
+      <div class="aboutBox">
+        <p>
+          <span class="pink">অনুভূতির পাতা</span> হলো গল্প, উপন্যাস, উক্তি এবং অনুভূতির একটি ছোট্ট সাহিত্যিক জগৎ।
+          <br><br>
+          এখানে ধীরে ধীরে যুক্ত হবে নতুন নতুন উপন্যাস, নিজের লেখা, সুন্দর প্রচ্ছদ এবং অধ্যায়ভিত্তিক গল্প।
+          <br><br>
+          <span class="pink">গল্প যেখানে অনুভূতি হয়ে বাঁচে।</span>
+          <br><br>
+          এই ওয়েবসাইটের পরিকল্পনা ও উপস্থাপনা:<br>
+          <span class="pink">Ashik Jin</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="admin" class="page adminPage">
+  <div class="section">
+    <div class="container">
+      <div class="heading">
+        <small>✦ PRIVATE AUTHOR AREA ✦</small>
+        <h2>Author Panel</h2>
+        <p>এই অংশটি সাধারণ দর্শকের জন্য গোপন। অনুমোদিত Firebase account ছাড়া কোনো তথ্য পরিবর্তন করা যাবে না।</p>
+      </div>
+
+      <div class="adminLogin" id="adminLogin">
+        <div style="font-size:12px;color:#999;margin-bottom:12px">🔒 Private Author Area • ৭ বার সাইটের নাম ট্যাপ করে খুলবে</div>
+        <h3>🔐 Ashik Jin Author Login</h3>
+        <input class="formInput" id="adminEmail" type="email" placeholder="Firebase-এ দেওয়া Email">
+        <input class="formInput" id="adminPassword" type="password" placeholder="Password">
+        <button class="adminButton" onclick="adminSignIn()">প্রবেশ করুন</button>
+        <div class="adminHelp">
+          এখানে Firebase Authentication ব্যবহার করা হয়েছে। Password এই HTML ফাইলে রাখা নেই।
+        </div>
+      </div>
+
+      <div class="adminPanel" id="adminPanel">
+        <div class="adminStatus" id="adminStatus"></div>
+
+        <h3>✍️ নতুন উপন্যাস / অধ্যায়</h3>
+        <input class="formInput" id="newTitle" placeholder="উপন্যাসের নাম">
+        <input class="formInput" id="newDescription" placeholder="উপন্যাসের ছোট বিবরণ">
+        <label style="display:block;color:#999;margin-bottom:8px;font-size:13px">🖼️ Cover নির্বাচন করুন</label>
+        <input class="formInput" id="coverFile" type="file" accept="image/*" onchange="previewCover(event)">
+        <div class="coverPreview" id="coverPreview"><img id="previewImage" alt="Cover Preview"></div>
+        <textarea class="formInput" id="newContent" placeholder="এখানে উপন্যাস বা অধ্যায়ের লেখা লিখুন..."></textarea>
+        <button class="adminButton" onclick="publishNovel()">✦ Publish Novel</button>
+        <button class="adminButton secondary" style="margin-left:8px" onclick="clearNovelForm()">Clear</button>
+
+        <hr style="border:0;border-top:1px solid #fff1;margin:30px 0">
+
+        <h3>✦ নতুন উক্তি</h3>
+        <textarea class="formInput" id="newQuote" placeholder="উক্তি লিখুন..."></textarea>
+        <input class="formInput" id="newQuoteAuthor" placeholder="উক্তির লেখক / নাম">
+        <button class="adminButton" onclick="publishQuote()">✦ Publish Quote</button>
+
+        <hr style="border:0;border-top:1px solid #fff1;margin:30px 0">
+
+        <h3>📚 প্রকাশিত উপন্যাস পরিচালনা</h3>
+        <div class="adminList" id="adminNovelList"></div>
+
+        <h3 style="margin-top:30px">✦ প্রকাশিত উক্তি পরিচালনা</h3>
+        <div class="adminList" id="adminQuoteList"></div>
+
+        <hr style="border:0;border-top:1px solid #fff1;margin:30px 0">
+        <h3>⚙️ Website Information</h3>
+        <input class="formInput" id="siteTitle" placeholder="সাইটের নাম">
+        <input class="formInput" id="siteTagline" placeholder="সাইটের Tagline">
+        <input class="formInput" id="sitePresented" placeholder="Presented by নাম">
+        <textarea class="formInput" id="siteAbout" placeholder="সাইটের পরিচিতি"></textarea>
+        <button class="adminButton" onclick="saveSiteSettings()">💾 Save Website Information</button>
+
+        <div style="margin-top:30px">
+          <button class="adminButton secondary" onclick="adminSignOut()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="reader">
+  <div class="readerBox">
+    <button class="closeReader" onclick="closeReader()">×</button>
+    <h2 class="readerTitle" id="readerTitle"></h2>
+    <div class="readerCover" id="readerCover" style="display:none"><img id="readerImage" alt="Novel Cover"></div>
+    <div class="readerText" id="readerText"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footerLogo">✦ অনুভূতির পাতা ✦</div>
+  <div class="footerTag">গল্প যেখানে অনুভূতি হয়ে বাঁচে</div>
+  <div class="footerPresented">Presented by...<strong>Ashik Jin</strong></div>
+  <div class="footerTag" style="margin-top:25px">© 2026 অনুভূতির পাতা</div>
+</footer>
+
+</div>
+<div id="toast"></div><div id="secretHint">🔐 Private Author access</div>
+
+<script type="module">
+/* =========================================================
+   FIREBASE
+   তোমার দেওয়া Firebase Web App Config
+========================================================= */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import {
+  getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import {
+  getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc,
+  serverTimestamp, query, orderBy, setDoc
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import {
+  getStorage, ref, uploadBytes, getDownloadURL, deleteObject
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBbVoG_janSqkBr-3ExnZYkWdbhETKchp8",
+  authDomain: "onuvutir-pata.firebaseapp.com",
+  projectId: "onuvutir-pata",
+  storageBucket: "onuvutir-pata.firebasestorage.app",
+  messagingSenderId: "1013572026567",
+  appId: "1:1013572026567:web:2d29a23b6b35ee74a07ee2",
+  measurementId: "G-GW3GXN494X"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+/* তোমার Firebase User UID — Firestore/Storage Rules-এ একই UID দিতে হবে */
+const ADMIN_UID = "OkZQTclsWqftK8ywWuBG0Nv0XTs1";
+
+let currentUser = null;
+let selectedCoverFile = null;
+let novelsCache = [];
+let quotesCache = [];
+
+/* ---------- PRIVATE AUTHOR ACCESS ---------- */
+let secretTapCount=0;
+let secretTapTimer=null;
+let adminDeviceUnlocked=localStorage.getItem("onuvutir_admin_device") === "1";
+const brandSecret=document.getElementById("brandSecret");
+if(brandSecret){
+  brandSecret.addEventListener("click",()=>{
+    secretTapCount++;
+    clearTimeout(secretTapTimer);
+    secretTapTimer=setTimeout(()=>secretTapCount=0,1800);
+    if(secretTapCount>=7){
+      secretTapCount=0;
+      adminDeviceUnlocked=true;
+      localStorage.setItem('onuvutir_admin_device','1');
+      const hint=document.getElementById("secretHint");
+      if(hint){hint.style.display="block";setTimeout(()=>hint.style.display="none",2200)}
+      showPage("admin");
+    }
+  });
+}
+
+/* ---------- BASIC UI ---------- */
+window.enterSite = function(){
+  document.getElementById("intro").classList.add("exit");
+  setTimeout(()=>{
+    document.getElementById("website").classList.add("visible");
+    showPage("home");
+    window.scrollTo({top:0,behavior:"smooth"});
+  },1000);
+};
+
+window.showPage = function(pageId){
+  if(pageId==="admin" && !(currentUser && currentUser.uid===ADMIN_UID) && !adminDeviceUnlocked){
+    toast('🔒 Author Panel গোপন রাখা হয়েছে');
+    return;
+  }
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  const target=document.getElementById(pageId);
+  if(target) target.classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(pageId==="admin" && currentUser) renderAdminLists();
+};
+
+window.toast = function(message){
+  const box=document.getElementById("toast");
+  box.textContent=message;
+  box.classList.add("show");
+  setTimeout(()=>box.classList.remove("show"),2600);
+};
+
+/* ---------- LOADER ---------- */
+window.addEventListener("load",()=>{
+  setTimeout(()=>{
+    const loader=document.getElementById("pageLoader");
+    loader.style.opacity="0";
+    setTimeout(()=>loader.style.display="none",800);
+  },900);
+});
+
+/* ---------- NOVELS ---------- */
+function escapeHTML(text){
+  const div=document.createElement("div");
+  div.textContent=text ?? "";
+  return div.innerHTML;
+}
+
+function renderNovels(){
+  const grid=document.getElementById("novelGrid");
+  grid.innerHTML="";
+  if(!novelsCache.length){
+    grid.innerHTML=`
+      <article class="novelCard">
+        <div class="cover">
+          <div class="coverDefault">
+            <div class="coverIcon">📖</div>
+            <h3>নতুন গল্প আসছে</h3>
+            <span>ASHIK JIN</span>
+          </div>
+        </div>
+        <div class="novelInfo">
+          <div class="number">COMING SOON</div>
+          <h3>তোমার প্রথম উপন্যাস</h3>
+          <p>Author Panel থেকে নিজের উপন্যাস Publish করলে এখানে দেখা যাবে।</p>
+        </div>
+      </article>`;
+    return;
+  }
+
+  novelsCache.forEach((novel,index)=>{
+    const article=document.createElement("article");
+    article.className="novelCard";
+    article.dataset.title=novel.title || "";
+    const cover=novel.coverUrl
+      ? `<div class="cover"><img src="${escapeHTML(novel.coverUrl)}" alt="${escapeHTML(novel.title)}"></div>`
+      : `<div class="cover"><div class="coverDefault"><div class="coverIcon">📖</div><h3>${escapeHTML(novel.title)}</h3><span>ASHIK JIN</span></div></div>`;
+    article.innerHTML=`
+      ${cover}
+      <div class="novelInfo">
+        <div class="number">NOVEL • ${String(index+1).padStart(2,"0")}</div>
+        <h3>${escapeHTML(novel.title)}</h3>
+        <p>${escapeHTML(novel.description || "Ashik Jin-এর লেখা নতুন উপন্যাস।")}</p>
+        <a href="#" class="readNovel">📖 পড়া শুরু করুন →</a>
+      </div>`;
+    article.querySelector(".readNovel").onclick=(event)=>{
+      event.preventDefault();
+      openReader(novel.title,novel.coverUrl||"",novel.content||"");
+    };
+    grid.appendChild(article);
+  });
+}
+
+async function loadNovels(){
+  try{
+    const q=query(collection(db,"novels"),orderBy("createdAt","desc"));
+    const snap=await getDocs(q);
+    novelsCache=snap.docs.filter(d=>d.id!=="__siteSettings__").map(d=>({id:d.id,...d.data()}));
+  }catch(err){
+    console.error(err);
+    novelsCache=[];
+    toast("উপন্যাস লোড করতে Firestore Rules/Database দেখুন");
+  }
+  renderNovels();
+}
+
+window.searchNovels=function(){
+  const value=document.getElementById("novelSearch").value.toLowerCase().trim();
+  document.querySelectorAll(".novelCard").forEach(card=>{
+    const title=(card.dataset.title||"").toLowerCase();
+    card.style.display=title.includes(value)?"":"none";
+  });
+};
+
+window.openReader=function(title,image,content){
+  document.getElementById("readerTitle").textContent=title;
+  document.getElementById("readerText").textContent=content;
+  const cover=document.getElementById("readerCover");
+  if(image){
+    document.getElementById("readerImage").src=image;
+    cover.style.display="block";
+  }else cover.style.display="none";
+  document.getElementById("reader").style.display="block";
+};
+
+window.closeReader=function(){
+  document.getElementById("reader").style.display="none";
+};
+
+/* ---------- QUOTES ---------- */
+function renderQuotes(){
+  const grid=document.getElementById("quoteGrid");
+  grid.innerHTML="";
+  const defaultQuotes = [
+    {id:'default1',text:'কিছু গল্পের শেষ হয়, কিন্তু কিছু অনুভূতি থেকে যায়।',author:'অনুভূতির পাতা'},
+    {id:'default2',text:'সব কথা মুখে বলতে হয় না, কিছু কথা নীরবতাও বলে দেয়।',author:'Ashik Jin'},
+    {id:'default3',text:'কিছু মানুষ গল্প হয়ে আসে, তারপর স্মৃতি হয়ে থেকে যায়।',author:'অনুভূতির পাতা'},
+    {id:'default4',text:'রাত যত গভীর হয়, কিছু অনুভূতি তত স্পষ্ট হয়ে ওঠে।',author:'Ashik Jin'}
+  ];
+  const list = quotesCache.length ? quotesCache : defaultQuotes;
+
+  list.forEach((q,i)=>{
+    const article=document.createElement("article");
+    article.className="quoteCard";
+    const id="quote_"+q.id;
+    article.innerHTML=`
+      <div class="quoteText" id="${id}">${escapeHTML(q.text)}</div>
+      <div class="quoteAuthor">— ${escapeHTML(q.author || "অনুভূতির পাতা")}</div>
+      <div class="actions">
+        <button>📋 Copy</button>
+        <button>💾 Save</button>
+        <button>📤 Share</button>
+      </div>`;
+    const buttons=article.querySelectorAll("button");
+    buttons[0].onclick=()=>copyQuote(id);
+    buttons[1].onclick=()=>saveQuote(id);
+    buttons[2].onclick=()=>shareQuote(id);
+    grid.appendChild(article);
+  });
+}
+
+async function loadQuotes(){
+  try{
+    const q=query(collection(db,"quotes"),orderBy("createdAt","desc"));
+    const snap=await getDocs(q);
+    quotesCache=snap.docs.map(d=>({id:d.id,...d.data()}));
+  }catch(err){
+    console.error(err);
+    quotesCache=[];
+    toast("উক্তি লোড করতে Firestore Rules/Database দেখুন");
+  }
+  renderQuotes();
+  loadSavedQuotes();
+}
+
+window.copyQuote=function(id){
+  const text=document.getElementById(id)?.innerText || "";
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(()=>toast("✓ উক্তি কপি হয়েছে")).catch(()=>fallbackCopy(text));
+  }else fallbackCopy(text);
+};
+
+function fallbackCopy(text){
+  const area=document.createElement("textarea");
+  area.value=text;document.body.appendChild(area);area.select();
+  document.execCommand("copy");area.remove();toast("✓ উক্তি কপি হয়েছে");
+}
+
+window.saveQuote=function(id){
+  const text=document.getElementById(id)?.innerText || "";
+  let saved=JSON.parse(localStorage.getItem("savedQuotes")||"[]");
+  if(!saved.includes(text)){
+    saved.push(text);
+    localStorage.setItem("savedQuotes",JSON.stringify(saved));
+    toast("💾 উক্তি Save হয়েছে");
+    loadSavedQuotes();
+  }else toast("এই উক্তিটি আগেই Save করা আছে");
+};
+
+function loadSavedQuotes(){
+  const saved=JSON.parse(localStorage.getItem("savedQuotes")||"[]");
+  const box=document.getElementById("savedQuotes");
+  if(!saved.length){box.textContent="এখনো কোনো উক্তি Save করা হয়নি।";return}
+  box.innerHTML="";
+  saved.forEach((text,index)=>{
+    const div=document.createElement("div");
+    div.className="savedItem";
+    div.textContent=(index+1)+". "+text;
+    box.appendChild(div);
+  });
+}
+
+window.shareQuote=function(id){
+  const text=document.getElementById(id)?.innerText || "";
+  const shareText=text+"\n\n— অনুভূতির পাতা\nPresented by Ashik Jin";
+  if(navigator.share){
+    navigator.share({title:"অনুভূতির পাতা",text:shareText}).then(()=>toast("✓ Share করা হয়েছে")).catch(()=>{});
+  }else{
+    fallbackCopy(shareText);
+    toast("Share support নেই—লেখাটি Copy হয়েছে");
+  }
+};
+
+/* ---------- AUTH ---------- */
+window.adminSignIn=async function(){
+  const email=document.getElementById("adminEmail").value.trim();
+  const password=document.getElementById("adminPassword").value;
+  if(!email || !password){toast("Email ও Password দিন");return}
+  try{
+    const result=await signInWithEmailAndPassword(auth,email,password);
+    if(result.user.uid!==ADMIN_UID){
+      await signOut(auth);
+      toast("এই account Author হিসেবে অনুমোদিত নয়");
+      return;
+    }
+    toast("✓ Author Panel খুলেছে");
+  }catch(err){
+    console.error(err);
+    toast("Login হয়নি: Email/Password ঠিক আছে কি দেখুন");
+  }
+};
+
+window.adminSignOut=async function(){
+  await signOut(auth);
+  toast("Logout হয়েছে");
+};
+
+onAuthStateChanged(auth,user=>{
+  currentUser=user;
+  const login=document.getElementById("adminLogin");
+  const panel=document.getElementById("adminPanel");
+  const status=document.getElementById("adminStatus");
+
+  if(user && user.uid===ADMIN_UID){
+    localStorage.setItem("onuvutir_admin_device","1");
+    adminDeviceUnlocked=true;
+    login.style.display="none";
+    panel.style.display="block";
+    status.style.display="block";
+    status.textContent="✓ Ashik Jin হিসেবে Author Panel-এ লগইন করা আছে";
+    renderAdminLists();
+  }else{
+    login.style.display="block";
+    panel.style.display="none";
+    status.style.display="none";
+  }
+});
+
+/* ---------- COVER ---------- */
+window.previewCover=function(event){
+  selectedCoverFile=event.target.files[0]||null;
+  if(!selectedCoverFile)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    document.getElementById("previewImage").src=e.target.result;
+    document.getElementById("coverPreview").style.display="block";
+  };
+  reader.readAsDataURL(selectedCoverFile);
+};
+
+async function uploadCover(file){
+  if(!file)return "";
+  if(file.size>5*1024*1024) throw new Error("Cover 5MB-এর বেশি হবে না");
+  const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,"_");
+  const path=`covers/${Date.now()}_${safe}`;
+  const storageRef=ref(storage,path);
+  await uploadBytes(storageRef,file);
+  return await getDownloadURL(storageRef);
+}
+
+/* ---------- PUBLISH NOVEL ---------- */
+window.publishNovel=async function(){
+  if(!currentUser || currentUser.uid!==ADMIN_UID){toast("আগে Author Login করুন");return}
+  const title=document.getElementById("newTitle").value.trim();
+  const description=document.getElementById("newDescription").value.trim();
+  const content=document.getElementById("newContent").value.trim();
+  if(!title){toast("উপন্যাসের নাম লিখুন");return}
+  if(!content){toast("উপন্যাসের লেখা লিখুন");return}
+
+  const btn=document.querySelector("#adminPanel .adminButton");
+  btn.disabled=true;btn.textContent="Publishing...";
+  try{
+    const coverUrl=await uploadCover(selectedCoverFile);
+    await addDoc(collection(db,"novels"),{
+      title,description:description||"Ashik Jin-এর লেখা নতুন উপন্যাস।",
+      content,coverUrl,author:"Ashik Jin",createdAt:serverTimestamp()
+    });
+    clearNovelForm();
+    toast("✓ উপন্যাস Firebase-এ Publish হয়েছে");
+    await loadNovels();
+    await renderAdminLists();
+  }catch(err){
+    console.error(err);
+    toast("Publish হয়নি: Firestore/Storage Rules দেখুন");
+  }finally{
+    btn.disabled=false;btn.textContent="✦ Publish Novel";
+  }
+};
+
+window.clearNovelForm=function(){
+  document.getElementById("newTitle").value="";
+  document.getElementById("newDescription").value="";
+  document.getElementById("newContent").value="";
+  document.getElementById("coverFile").value="";
+  document.getElementById("coverPreview").style.display="none";
+  document.getElementById("previewImage").src="";
+  selectedCoverFile=null;
+};
+
+/* ---------- PUBLISH QUOTE ---------- */
+window.publishQuote=async function(){
+  if(!currentUser || currentUser.uid!==ADMIN_UID){toast("আগে Author Login করুন");return}
+  const text=document.getElementById("newQuote").value.trim();
+  const author=document.getElementById("newQuoteAuthor").value.trim();
+  if(!text){toast("উক্তি লিখুন");return}
+  try{
+    await addDoc(collection(db,"quotes"),{
+      text,author:author||"Ashik Jin",createdAt:serverTimestamp()
+    });
+    document.getElementById("newQuote").value="";
+    document.getElementById("newQuoteAuthor").value="";
+    toast("✓ উক্তি Publish হয়েছে");
+    await loadQuotes();
+    await renderAdminLists();
+  }catch(err){
+    console.error(err);
+    toast("উক্তি Publish হয়নি: Firestore Rules দেখুন");
+  }
+};
+
+/* ---------- ADMIN LISTS ---------- */
+async function renderAdminLists(){
+  if(!currentUser || currentUser.uid!==ADMIN_UID)return;
+  const novelBox=document.getElementById("adminNovelList");
+  const quoteBox=document.getElementById("adminQuoteList");
+  novelBox.innerHTML="";
+  quoteBox.innerHTML="";
+
+  if(!novelsCache.length) novelBox.innerHTML='<div class="adminItem"><div class="adminItemInfo"><strong>কোনো উপন্যাস নেই</strong><small>উপরের ফর্ম থেকে Publish করুন।</small></div></div>';
+  novelsCache.forEach(n=>{
+    const item=document.createElement("div");
+    item.className="adminItem";
+    item.innerHTML=`
+      <div class="adminItemInfo">
+        <strong>${escapeHTML(n.title)}</strong>
+        <small>${escapeHTML(n.description||"")}</small>
+      </div>
+      <div>
+        <button class="adminButton secondary">Edit</button>
+        <button class="adminButton danger">Delete</button>
+      </div>`;
+    item.querySelectorAll("button")[0].onclick=()=>editNovel(n.id);
+    item.querySelectorAll("button")[1].onclick=()=>deleteNovel(n.id,n.coverUrl);
+    novelBox.appendChild(item);
+  });
+
+  if(!quotesCache.length) quoteBox.innerHTML='<div class="adminItem"><div class="adminItemInfo"><strong>কোনো উক্তি নেই</strong><small>উপরের ফর্ম থেকে Publish করুন।</small></div></div>';
+  quotesCache.forEach(q=>{
+    const item=document.createElement("div");
+    item.className="adminItem";
+    item.innerHTML=`
+      <div class="adminItemInfo">
+        <strong>${escapeHTML(q.text)}</strong>
+        <small>— ${escapeHTML(q.author||"")}</small>
+      </div>
+      <div>
+        <button class="adminButton secondary">Edit</button>
+        <button class="adminButton danger">Delete</button>
+      </div>`;
+    const bs=item.querySelectorAll('button');
+    bs[0].onclick=()=>editQuote(q.id);
+    bs[1].onclick=()=>deleteQuote(q.id);
+    quoteBox.appendChild(item);
+  });
+}
+
+window.editNovel=async function(id){
+  const n=novelsCache.find(x=>x.id===id);
+  if(!n)return;
+  const title=prompt("উপন্যাসের নাম:",n.title||"");
+  if(title===null)return;
+  const description=prompt("বিবরণ:",n.description||"");
+  if(description===null)return;
+  const content=prompt("উপন্যাসের লেখা:",n.content||"");
+  if(content===null)return;
+  try{
+    await updateDoc(doc(db,"novels",id),{title,description,content});
+    toast("✓ উপন্যাস আপডেট হয়েছে");
+    await loadNovels();
+    await renderAdminLists();
+  }catch(err){console.error(err);toast("Update হয়নি")}
+};
+
+window.deleteNovel=async function(id,coverUrl){
+  if(!confirm("এই উপন্যাসটি Delete করতে চান?"))return;
+  try{
+    await deleteDoc(doc(db,"novels",id));
+    if(coverUrl){
+      try{await deleteObject(ref(storage,coverUrl))}catch(e){}
+    }
+    toast("✓ উপন্যাস Delete হয়েছে");
+    await loadNovels();
+    await renderAdminLists();
+  }catch(err){console.error(err);toast("Delete হয়নি")}
+};
+
+window.editQuote=async function(id){
+  if(id.startsWith('default')){toast('ডিফল্ট উক্তি পরিবর্তন করতে নতুন উক্তি Publish করুন');return}
+  const q=quotesCache.find(x=>x.id===id);
+  if(!q)return;
+  const text=prompt('উক্তি:',q.text||'');
+  if(text===null)return;
+  const author=prompt('লেখকের নাম:',q.author||'Ashik Jin');
+  if(author===null)return;
+  try{
+    await updateDoc(doc(db,'quotes',id),{text,author});
+    toast('✓ উক্তি আপডেট হয়েছে');
+    await loadQuotes();
+    await renderAdminLists();
+  }catch(err){console.error(err);toast('উক্তি Update হয়নি')}
+};
+
+window.deleteQuote=async function(id){
+  if(!confirm("এই উক্তিটি Delete করতে চান?"))return;
+  try{
+    await deleteDoc(doc(db,"quotes",id));
+    toast("✓ উক্তি Delete হয়েছে");
+    await loadQuotes();
+    await renderAdminLists();
+  }catch(err){console.error(err);toast("Delete হয়নি")}
+};
+
+/* ---------- WEBSITE SETTINGS ---------- */
+let siteSettings={
+  title:"অনুভূতির পাতা",
+  tagline:"গল্প যেখানে অনুভূতি হয়ে বাঁচে",
+  presented:"Ashik Jin",
+  about:"অনুভূতির পাতা হলো গল্প, উপন্যাস, উক্তি এবং অনুভূতির একটি ছোট্ট সাহিত্যিক জগৎ।"
+};
+
+async function loadSiteSettings(){
+  try{
+    const snap=await getDocs(query(collection(db,"novels")));
+    const settingsDoc=snap.docs.find(d=>d.id==="__siteSettings__");
+    if(settingsDoc) siteSettings={...siteSettings,...settingsDoc.data()};
+  }catch(e){console.error(e)}
+  applySiteSettings();
+}
+
+function applySiteSettings(){
+  document.querySelectorAll(".brand").forEach(x=>x.textContent="✦ "+siteSettings.title);
+  document.querySelectorAll(".footerLogo").forEach(x=>x.textContent="✦ "+siteSettings.title+" ✦");
+  document.querySelectorAll(".footerTag").forEach((x,i)=>{if(i===0)x.textContent=siteSettings.tagline});
+  document.querySelectorAll(".footerPresented strong").forEach(x=>x.textContent=siteSettings.presented);
+  const h=document.querySelector("#home .homeContent h1"); if(h)h.textContent=siteSettings.title;
+  const homeP=document.querySelector("#home .homeContent p"); if(homeP)homeP.innerHTML=siteSettings.tagline+"<br>কিছু গল্প শুধু পড়া যায় না—তারা ধীরে ধীরে আমাদের অনুভূতির অংশ হয়ে যায়।";
+  const aboutP=document.querySelector("#about .aboutBox p");
+  if(aboutP) aboutP.innerHTML='<span class="pink">'+escapeHTML(siteSettings.title)+'</span> হলো গল্প, উপন্যাস, উক্তি এবং অনুভূতির একটি ছোট্ট সাহিত্যিক জগৎ।<br><br>'+escapeHTML(siteSettings.about)+'<br><br><span class="pink">'+escapeHTML(siteSettings.tagline)+'</span><br><br>এই ওয়েবসাইটের পরিকল্পনা ও উপস্থাপনা:<br><span class="pink">'+escapeHTML(siteSettings.presented)+'</span>';
+  const a=document.getElementById("siteTitle"); if(a)a.value=siteSettings.title;
+  const b=document.getElementById("siteTagline"); if(b)b.value=siteSettings.tagline;
+  const c=document.getElementById("sitePresented"); if(c)c.value=siteSettings.presented;
+  const d=document.getElementById("siteAbout"); if(d)d.value=siteSettings.about;
+}
+
+window.saveSiteSettings=async function(){
+  if(!currentUser || currentUser.uid!==ADMIN_UID){toast("আগে Author Login করুন");return}
+  const title=document.getElementById("siteTitle").value.trim()||"অনুভূতির পাতা";
+  const tagline=document.getElementById("siteTagline").value.trim()||"গল্প যেখানে অনুভূতি হয়ে বাঁচে";
+  const presented=document.getElementById("sitePresented").value.trim()||"Ashik Jin";
+  const about=document.getElementById("siteAbout").value.trim()||"অনুভূতির পাতা হলো গল্প, উপন্যাস, উক্তি এবং অনুভূতির একটি ছোট্ট সাহিত্যিক জগৎ।";
+  try{
+    await setDoc(doc(db,"novels","__siteSettings__"),{title,tagline,presented,about,updatedAt:serverTimestamp()},{merge:true});
+    siteSettings={title,tagline,presented,about};
+    applySiteSettings();
+    toast("✓ Website Information Save হয়েছে");
+  }catch(e){console.error(e);toast("Save হয়নি: Firestore Rules দেখুন")}
+};
+
+/* ---------- PARTICLES ---------- */
+for(let i=0;i<18;i++){
+  const p=document.createElement("span");
+  p.className="particle";
+  p.style.left=(Math.random()*100)+"%";
+  p.style.animationDuration=(8+Math.random()*12)+"s";
+  p.style.animationDelay=(Math.random()*8)+"s";
+  document.body.appendChild(p);
+}
+
+/* ---------- START ---------- */
+loadNovels();
+loadQuotes();
+loadSiteSettings();
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape")closeReader();
+});
+</script>
+
+</body>
+</html>
